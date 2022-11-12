@@ -1,0 +1,34 @@
+title: Nomaan Qureshi
+author: Nomaan Qureshi
+url: ""
+baseurl: ""
+
+markdown: kramdown
+ins_logo: "./iiith_logo.png"
+ins_logo2: "../iiith_logo.png"
+
+tracking_id: UA-172754754-1
+
+footer: yes
+footer_url: "qureshinomaan.github.io"
+footer_text: "Mohammad Nomaan Qureshi"
+
+sass:
+    style: compressed
+    sass_dir: _sass
+
+nav:
+ - name: "Resume"
+   link: "resume.pdf"
+ - name: "Blog"
+   link: "blog"
+ - name: "Contact"
+   link: "contact"
+
+nav_blog:
+ - name: "Resume"
+   link: "../resume.pdf"
+ - name: "Blog"
+   link: "../blog"
+ - name: "Contact"
+   link: "../contact"
