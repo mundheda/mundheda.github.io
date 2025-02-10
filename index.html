@@ -63,26 +63,37 @@
 
 
 
-    <tr onmouseout="cat4d_stop()" onmouseover="cat4d_start()">
-      <td style="padding:16px;width:20%;vertical-align:middle">
-        <div class="one">
-          <div class="two" id='cat4d_image'><video  width=100% height=100% muted autoplay loop>
-          <source src="images/tadpo.gif" type="image/gif">
-          Your browser does not support the video tag.
-          </video></div>
-          <img src='images/tadpo.gif' width="160">
-        </div>
-        <script type="text/javascript">
-          function cat4d_start() {
-            document.getElementById('cat4d_image').style.opacity = "1";
-          }
-
-          function cat4d_stop() {
-            document.getElementById('cat4d_image').style.opacity = "0";
-          }
-          cat4d_stop()
-        </script>
-      </td>
+            <tr onmouseout="cat4d_stop()" onmouseover="cat4d_start()">
+              <td style="padding:16px;width:20%;vertical-align:middle">
+                  <div class="one">
+                      <div class="two" id="cat4d_image">
+                          <!-- Default image (tadpo.png) -->
+                          <img src="images/tadpo.png" class="image-hover" width="100%" height="100%" alt="Tadpole Image">
+                      </div>
+                      <img src="images/tadpo.gif" class="image-hover-animated" width="160" style="display:none;" alt="Tadpole GIF">
+                  </div>
+                  <script type="text/javascript">
+                      function cat4d_start() {
+                          // Change the opacity of the image to make it visible
+                          document.getElementById('cat4d_image').style.opacity = "1";
+                          // Change the image to tadpo.gif on hover
+                          document.querySelector('.image-hover').style.display = "none"; // Hide the static image (tadpo.png)
+                          document.querySelector('.image-hover-animated').style.display = "inline"; // Show the animated image (tadpo.gif)
+                      }
+          
+                      function cat4d_stop() {
+                          // Change the opacity to hide the image
+                          document.getElementById('cat4d_image').style.opacity = "0";
+                          // Show the static image and hide the animated image when hover ends
+                          document.querySelector('.image-hover').style.display = "inline";
+                          document.querySelector('.image-hover-animated').style.display = "none";
+                      }
+          
+                      // Initially, hide the animated image (tadpo.gif)
+                      cat4d_stop();
+                  </script>
+              </td>
+          </tr>
       <td style="padding:8px;width:80%;vertical-align:middle">
         <!-- <a href="https://cat-4d.github.io/"> -->
 			<span class="papertitle">Teacher-guided Policy Optimization Off-road Autonomous Driving
@@ -99,7 +110,7 @@
         <br>
         <!-- <a href="https://cat-4d.github.io/">project page</a>
         / -->
-        <a href="https://drive.google.com/file/d/17uGKu6URwIKBXu0DJ4Iynd4t6SDoHK4e/view?usp=sharing">Preprint</a>
+        <a href="https://drive.google.com/file/d/17uGKu6URwIKBXu0DJ4Iynd4t6SDoHK4e/view?usp=sharing">preprint</a>
         <p></p>
         <p>
 				An approach for turning a video into a 4D radiance field that can be rendered in real-time. When combined with a text-to-video model, this enables text-to-4D.
